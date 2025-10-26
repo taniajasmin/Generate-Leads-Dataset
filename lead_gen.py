@@ -4,7 +4,7 @@ from faker import Faker
 
 fake = Faker("en_US")
 
-num_records = 30
+num_records = 1000
 output_file = "fake_leads.csv"
 
 states = ["FL", "TX", "NY", "NJ", "MA", "CT"]
@@ -36,5 +36,6 @@ with open(output_file, "w", newline="", encoding="utf-8") as f:
         interest = random.choice(interests)
         email = fake.email()
         writer.writerow([name, phone, state, interest, email])
+
 
 print(f"Generated {num_records} fake leads and saved to '{output_file}'")
